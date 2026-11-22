@@ -113,43 +113,29 @@ export const REPO_LINKS = [
 
 export const TIMELINE = [
   {
-    id: 'education',
-    period: '2023 — 2027',
-    kind: 'EDUCATION',
+    id: 'learning',
+    period: '2023 — NOW',
+    kind: 'LEARNING',
     title: 'B.Tech in Artificial Intelligence & Machine Learning',
     org: 'SSIPMT',
     blurb:
-      'Formal training in ML theory, data engineering and full-stack product development.',
+      'Degree, certifications and continuous hands-on practice in ML and full-stack engineering.',
     details: [
       'Core coursework: Machine Learning, Deep Learning, NLP, Computer Vision, Data Structures, Database Systems.',
-      'Project work: battery health estimation, sentiment analysis and crop recommendation systems.',
+      'ML/DL specialisations with applied PyTorch labs and full-stack React/REST development.',
       'Engineering practice: Git, API design, SQL modelling and deployment fundamentals.',
     ],
   },
   {
-    id: 'certifications',
-    period: '2023 — 2024',
-    kind: 'CERTIFICATIONS',
-    title: 'Applied ML & Cloud Foundations',
-    org: 'Continuous learning',
-    blurb:
-      'Structured certifications and hands-on labs that complement the degree.',
-    details: [
-      'Machine Learning and Deep Learning specialisations with applied PyTorch labs.',
-      'Full-stack web development with React, REST APIs and relational databases.',
-      'Version control and collaborative engineering workflows.',
-    ],
-  },
-  {
-    id: 'building',
-    period: '2024 — NOW',
+    id: 'build',
+    period: '2025 — NOW',
     kind: 'BUILDING',
     title: 'Shipping intelligent products',
     org: 'Independent',
     blurb:
       'Turning models into interfaces people can actually use.',
     details: [
-      'Four end-to-end projects spanning ML inference, NLP, agritech and productivity.',
+      'Four end-to-end projects spanning NLP, agritech, productivity and mood-based recommendation.',
       'Focus on latency, observability and interaction design — not just notebooks.',
       'Currently exploring retrieval systems and adaptive interfaces.',
     ],
