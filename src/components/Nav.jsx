@@ -133,8 +133,6 @@ export default function Nav() {
           </a>
           <a
             href={RESUME_URL}
-            target="_blank"
-            rel="noreferrer"
             aria-label="Open résumé PDF"
             className="hidden items-center gap-2 rounded-full border border-white/15 px-4 py-2 font-mono text-[10px] uppercase tracking-widest text-warm/80 transition-colors hover:border-neon/50 hover:text-neon sm:flex"
           >
@@ -182,8 +180,6 @@ export default function Nav() {
               </a>
               <a
                 href={RESUME_URL}
-                target="_blank"
-                rel="noreferrer"
                 onClick={() => setMenuOpen(false)}
                 className="mt-3 flex items-center gap-2 font-mono text-xs tracking-widest text-neon"
               >

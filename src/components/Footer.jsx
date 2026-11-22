@@ -36,6 +36,12 @@ export default function Footer() {
             >
               <Icon name="github" size={15} /> GitHub
             </a>
+            <a
+              href={`${import.meta.env.BASE_URL}SashaKolhatkar-Resume.pdf`}
+              className="btn-ghost"
+            >
+              <Icon name="arrowUpRight" size={15} /> Résumé PDF
+            </a>
           </div>
         </Reveal>
 
