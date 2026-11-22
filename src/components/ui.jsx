@@ -21,6 +21,8 @@ const paths = {
   sun: 'M12 5V3M12 21v-2M5 12H3M21 12h-2M5.6 5.6 4.2 4.2M19.8 19.8l-1.4-1.4M18.4 5.6l1.4-1.4M4.2 19.8l1.4-1.4M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z',
   moon: 'M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z',
   leaf: 'M20 4C11 4 4 8 4 15a5 5 0 0 0 5 5c7 0 11-7 11-16ZM4 20c3-5 7-8 12-10',
+  linkedin:
+    'M20.45 2H3.55C2.69 2 2 2.69 2 3.55v16.9C2 21.31 2.69 22 3.55 22h16.9c.86 0 1.55-.69 1.55-1.55V3.55C22 2.69 21.31 2 20.45 2ZM8 19H5V9.5h3V19ZM6.5 8.2a1.75 1.75 0 1 1 0-3.5 1.75 1.75 0 0 1 0 3.5ZM19 19h-3v-4.65c0-1.25-.02-2.86-1.75-2.86-1.75 0-2.02 1.36-2.02 2.77V19h-3V9.5h2.88v1.3h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.6V19Z',
 }
 
 export function Icon({ name, size = 16, className = '', strokeWidth = 1.6 }) {
@@ -37,8 +39,8 @@ export function Icon({ name, size = 16, className = '', strokeWidth = 1.6 }) {
       className={className}
       aria-hidden="true"
     >
-      {name === 'github' ? (
-        <path d={paths.github} fill="currentColor" stroke="none" />
+      {name === 'github' || name === 'linkedin' ? (
+        <path d={paths[name]} fill="currentColor" stroke="none" />
       ) : (
         <path d={paths[name] || paths.activity} />
       )}

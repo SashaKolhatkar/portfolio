@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion, useScroll, useSpring } from 'framer-motion'
-import { NAV_LINKS } from '../data'
+import { LINKEDIN_URL, NAV_LINKS } from '../data'
 import { useSettings } from '../context'
 import { BlinkDot, Icon } from './ui'
 
@@ -132,6 +132,15 @@ export default function Nav() {
             <Icon name="github" size={16} />
           </a>
           <a
+            href={LINKEDIN_URL}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn profile"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-muted transition-colors hover:border-neon/50 hover:text-neon"
+          >
+            <Icon name="linkedin" size={15} />
+          </a>
+          <a
             href={RESUME_URL}
             aria-label="Open résumé PDF"
             className="hidden items-center gap-2 rounded-full border border-white/15 px-4 py-2 font-mono text-[10px] uppercase tracking-widest text-warm/80 transition-colors hover:border-neon/50 hover:text-neon sm:flex"
@@ -184,6 +193,15 @@ export default function Nav() {
                 className="mt-3 flex items-center gap-2 font-mono text-xs tracking-widest text-neon"
               >
                 <Icon name="arrowUpRight" size={14} /> Résumé / PDF
+              </a>
+              <a
+                href={LINKEDIN_URL}
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => setMenuOpen(false)}
+                className="mt-3 flex items-center gap-2 font-mono text-xs tracking-widest text-muted hover:text-neon"
+              >
+                <Icon name="linkedin" size={14} /> LinkedIn
               </a>
             </nav>
           </motion.div>

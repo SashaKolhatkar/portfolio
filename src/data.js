@@ -14,6 +14,8 @@ export const NAV_LINKS = [
   { id: 'about', label: '04 / ORIGIN' },
 ]
 
+export const LINKEDIN_URL = 'https://www.linkedin.com/in/sasha-kolhatkar-407588288/'
+
 /* Real repositories from github.com/SashaKolhatkar are linked here. */
 export const PROJECTS = [
   {

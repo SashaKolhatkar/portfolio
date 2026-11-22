@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { useSettings } from '../context'
+import { LINKEDIN_URL } from '../data'
 import { BlinkDot, Icon, Reveal } from './ui'
 
 export default function Footer() {
@@ -44,6 +45,14 @@ export default function Footer() {
               className="btn-ghost"
             >
               <Icon name="arrowUpRight" size={15} /> Résumé PDF
+            </a>
+            <a
+              href={LINKEDIN_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-ghost"
+            >
+              <Icon name="linkedin" size={15} /> LinkedIn
             </a>
           </div>
         </Reveal>
