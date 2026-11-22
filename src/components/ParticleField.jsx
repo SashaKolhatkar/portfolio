@@ -55,7 +55,10 @@ export default function ParticleField() {
     let width = 0
     let height = 0
     let visible = true
-    let clock = 0
+    const accent = () =>
+      getComputedStyle(document.documentElement)
+        .getPropertyValue('--accent-rgb')
+        .trim() || '0,240,255'
 
     const resize = () => {
       const rect = canvas.getBoundingClientRect()
@@ -106,7 +109,7 @@ export default function ParticleField() {
         const q = pts[edges[k][1]]
         const depth = (p.depth + q.depth) / 2
         const alpha = 0.035 + Math.max(0, depth) * 0.075
-        ctx.strokeStyle = `rgba(0,240,255,${alpha})`
+        ctx.strokeStyle = `rgba(${accent()},${alpha})`
         ctx.beginPath()
         ctx.moveTo(p.sx, p.sy)
         ctx.lineTo(q.sx, q.sy)
@@ -121,19 +124,19 @@ export default function ParticleField() {
         const radius = 0.9 + front * 0.9 + pulse * 0.45
 
         if (nodes[i].seed > 0.86) {
-          ctx.fillStyle = `rgba(0,240,255,${0.035 + pulse * 0.035})`
+          ctx.fillStyle = `rgba(${accent()},${0.035 + pulse * 0.035})`
           ctx.beginPath()
           ctx.arc(p.sx, p.sy, radius * 5.5, 0, Math.PI * 2)
           ctx.fill()
         }
-        ctx.fillStyle = `rgba(0,240,255,${0.2 + front * 0.35 + pulse * 0.2})`
+        ctx.fillStyle = `rgba(${accent()},${0.2 + front * 0.35 + pulse * 0.2})`
         ctx.beginPath()
         ctx.arc(p.sx, p.sy, radius, 0, Math.PI * 2)
         ctx.fill()
       }
 
       // Axis crosshair
-      ctx.strokeStyle = 'rgba(0,240,255,0.11)'
+      ctx.strokeStyle = `rgba(${accent()},0.11)`
       ctx.setLineDash([2, 7])
       ctx.beginPath()
       ctx.moveTo(cx - unit * 1.25, cy)

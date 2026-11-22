@@ -22,14 +22,30 @@ export function SettingsProvider({ children }) {
     return window.matchMedia('(prefers-reduced-motion: reduce)').matches
   })
 
+  const [theme, setTheme] = useState(() => {
+    if (typeof window === 'undefined') return 'dark'
+    const stored = window.localStorage.getItem('sk-theme')
+    return ['dark', 'light', 'eco'].includes(stored) ? stored : 'dark'
+  })
+
   useEffect(() => {
     document.documentElement.classList.toggle('fast-mode', fast)
     window.localStorage.setItem('sk-fast-mode', String(fast))
   }, [fast])
 
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme
+    window.localStorage.setItem('sk-theme', theme)
+  }, [theme])
+
   const value = useMemo(
-    () => ({ fast, toggleFast: () => setFast((v) => !v) }),
-    [fast],
+    () => ({
+      fast,
+      toggleFast: () => setFast((v) => !v),
+      theme,
+      setTheme,
+    }),
+    [fast, theme],
   )
 
   return (

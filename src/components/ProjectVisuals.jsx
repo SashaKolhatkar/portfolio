@@ -32,7 +32,7 @@ export function BatteryChart() {
   const circumference = 2 * Math.PI * 30
 
   return (
-    <div className="relative h-44 w-full overflow-hidden rounded-xl border border-white/10 bg-[#0A0C11] p-4">
+    <div className="relative h-44 w-full overflow-hidden rounded-xl border border-white/10 bg-panel p-4">
       <div className="grid-fine pointer-events-none absolute inset-0 opacity-25" />
       <div className="relative flex h-full gap-4">
         <div className="min-w-0 flex-1">
@@ -49,15 +49,23 @@ export function BatteryChart() {
           >
             <defs>
               <linearGradient id="battery-fill" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#00F0FF" stopOpacity="0.3" />
-                <stop offset="100%" stopColor="#00F0FF" stopOpacity="0" />
+                <stop
+                  offset="0%"
+                  style={{ stopColor: 'rgb(var(--c-accent))' }}
+                  stopOpacity="0.3"
+                />
+                <stop
+                  offset="100%"
+                  style={{ stopColor: 'rgb(var(--c-accent))' }}
+                  stopOpacity="0"
+                />
               </linearGradient>
             </defs>
             <path d={area} fill="url(#battery-fill)" />
             <motion.path
               d={line}
               fill="none"
-              stroke="#00F0FF"
+              style={{ stroke: 'rgb(var(--c-accent))' }}
               strokeWidth="2"
               strokeLinecap="round"
               initial={fast ? false : { pathLength: 0 }}
@@ -73,6 +81,7 @@ export function BatteryChart() {
                 r="4"
                 fill="#E9B872"
                 initial={{ scale: 0 }}
+
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: fast ? 0 : 1 + i * 0.05 }}
@@ -89,7 +98,7 @@ export function BatteryChart() {
               cy="40"
               r="30"
               fill="none"
-              stroke="#00F0FF"
+              style={{ stroke: 'rgb(var(--c-accent))' }}
               strokeWidth="6"
               strokeLinecap="round"
               strokeDasharray={circumference}
@@ -134,7 +143,7 @@ export function SentimentLab() {
   const color = score > 0.12 ? '#00F0FF' : score < -0.12 ? '#E97C7C' : '#E9B872'
 
   return (
-    <div className="relative h-44 w-full overflow-hidden rounded-xl border border-white/10 bg-[#0A0C11] p-4">
+    <div className="relative h-44 w-full overflow-hidden rounded-xl border border-white/10 bg-panel p-4">
       <div className="grid-fine pointer-events-none absolute inset-0 opacity-20" />
       <div className="relative flex h-full flex-col">
         <div className="flex items-center justify-between">
@@ -158,7 +167,10 @@ export function SentimentLab() {
               <linearGradient id="sentiment-arc" x1="0" y1="0" x2="1" y2="0">
                 <stop offset="0%" stopColor="#E97C7C" />
                 <stop offset="50%" stopColor="#E9B872" />
-                <stop offset="100%" stopColor="#00F0FF" />
+                <stop
+                  offset="100%"
+                  style={{ stopColor: 'rgb(var(--c-accent))' }}
+                />
               </linearGradient>
             </defs>
             <path
@@ -219,7 +231,7 @@ export function MemozaMatrix() {
     )
 
   return (
-    <div className="relative h-44 w-full overflow-hidden rounded-xl border border-white/10 bg-[#0A0C11] p-3">
+    <div className="relative h-44 w-full overflow-hidden rounded-xl border border-white/10 bg-panel p-3">
       <div className="relative mb-2 flex items-center justify-between">
         <span className="font-mono text-[9px] uppercase tracking-widest text-muted">
           Eisenhower board · tap a card to sort
@@ -260,7 +272,7 @@ export function MemozaMatrix() {
                       layout={!fast}
                       onClick={() => move(task.id)}
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                      className={`truncate rounded border border-white/10 bg-[#171A23] px-1.5 py-1 text-left font-mono text-[8px] text-warm/80 hover:border-neon/50 hover:text-neon ${
+                      className={`truncate rounded border border-white/10 bg-elevated px-1.5 py-1 text-left font-mono text-[8px] text-warm/80 hover:border-neon/50 hover:text-neon ${
                         fast ? '' : 'cursor-pointer'
                       }`}
                       title="Move to next quadrant"
@@ -299,7 +311,7 @@ export function CropLab() {
   const result = recommend(values)
 
   return (
-    <div className="relative h-44 w-full overflow-hidden rounded-xl border border-white/10 bg-[#0A0C11] p-4">
+    <div className="relative h-44 w-full overflow-hidden rounded-xl border border-white/10 bg-panel p-4">
       <div className="grid-fine pointer-events-none absolute inset-0 opacity-20" />
       <div className="relative flex h-full gap-5">
         <div className="flex flex-1 flex-col justify-center gap-3">
@@ -329,7 +341,7 @@ export function CropLab() {
                   }
                   aria-label={slider.label}
                   style={{
-                    background: `linear-gradient(to right, #00F0FF ${pct}%, #242832 ${pct}%)`,
+                    background: `linear-gradient(to right, rgb(var(--c-accent)) ${pct}%, rgb(var(--c-elevated)) ${pct}%)`,
                   }}
                 />
               </div>
@@ -393,7 +405,7 @@ export function MoodLab() {
     .slice(0, 3)
 
   return (
-    <div className="relative h-44 w-full overflow-hidden rounded-xl border border-white/10 bg-[#0A0C11] p-4">
+    <div className="relative h-44 w-full overflow-hidden rounded-xl border border-white/10 bg-panel p-4">
       <div className="grid-fine pointer-events-none absolute inset-0 opacity-20" />
       <div className="relative flex h-full gap-4">
         <div className="flex w-[122px] shrink-0 flex-col justify-center border-r border-white/10 pr-3">
@@ -460,7 +472,6 @@ export function MoodLab() {
 }
 
 export const VISUALS = {
-  battery: BatteryChart,
   sentiment: SentimentLab,
   memoza: MemozaMatrix,
   crop: CropLab,

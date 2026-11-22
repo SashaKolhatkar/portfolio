@@ -4,12 +4,20 @@ import { NAV_LINKS } from '../data'
 import { useSettings } from '../context'
 import { BlinkDot, Icon } from './ui'
 
+const THEMES = [
+  { id: 'dark', icon: 'moon', label: 'Dark' },
+  { id: 'light', icon: 'sun', label: 'Light' },
+  { id: 'eco', icon: 'leaf', label: 'Eco' },
+]
+
 export default function Nav() {
-  const { fast, toggleFast } = useSettings()
+  const { fast, toggleFast, theme, setTheme } = useSettings()
   const { scrollYProgress } = useScroll()
   const progress = useSpring(scrollYProgress, { stiffness: 140, damping: 30 })
   const [active, setActive] = useState('hero')
   const [menuOpen, setMenuOpen] = useState(false)
+  const nextTheme =
+    THEMES[(THEMES.findIndex((t) => t.id === theme) + 1) % THEMES.length]
 
   useEffect(() => {
     const sections = NAV_LINKS.map((link) =>
@@ -61,6 +69,38 @@ export default function Nav() {
         </nav>
 
         <div className="flex items-center gap-2 sm:gap-3">
+          <div
+            className="hidden items-center gap-0.5 rounded-full border border-white/10 bg-white/[0.03] p-0.5 sm:flex"
+            role="group"
+            aria-label="Colour theme"
+          >
+            {THEMES.map((option) => (
+              <button
+                key={option.id}
+                type="button"
+                onClick={() => setTheme(option.id)}
+                aria-pressed={theme === option.id}
+                aria-label={`${option.label} theme`}
+                title={`${option.label} theme`}
+                className={`flex h-7 w-7 items-center justify-center rounded-full transition-colors ${
+                  theme === option.id
+                    ? 'bg-neon text-obsidian'
+                    : 'text-muted hover:text-warm'
+                }`}
+              >
+                <Icon name={option.icon} size={13} />
+              </button>
+            ))}
+          </div>
+          <button
+            type="button"
+            onClick={() => setTheme(nextTheme.id)}
+            aria-label={`Switch to ${nextTheme.label} theme`}
+            title={`Theme: ${theme}`}
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-neon sm:hidden"
+          >
+            <Icon name={nextTheme.icon} size={15} />
+          </button>
           <button
             type="button"
             onClick={toggleFast}

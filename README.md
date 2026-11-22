@@ -27,7 +27,8 @@ npm run preview
 ## Customise
 
 - Content lives in `src/data.js` (projects, timeline, nav links, tech stack).
-- Real repositories are wired up in `src/data.js`: SentimentIQ, Memoza, Smart Crop Recommendation and Mood → Music, with live demos where available. BatterySense AI is a concept study, so its links are intentionally disabled — replace the `#` values when you publish it.
+- Real repositories are wired up in `src/data.js`: SentimentIQ, Memoza, Smart Crop Recommendation and Mood → Music, with live demos where available.
+- Theme modes (Dark / Light / Eco) live in `src/context.jsx` and `src/index.css`; Fast Mode remains independent of the theme.
 - Résumé currently links to the contact section in `src/components/Nav.jsx`; swap it for a PDF URL when available.
 - Update the contact email in `src/components/Footer.jsx`.
 - Colours and fonts are configured in `tailwind.config.js` and `src/index.css`.

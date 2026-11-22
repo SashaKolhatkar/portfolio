@@ -4,12 +4,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        obsidian: '#0D0E12',
-        panel: '#12141B',
-        elevated: '#171A23',
-        neon: '#00F0FF',
-        warm: '#F3F0E7',
-        muted: '#8B93A7',
+        obsidian: 'rgb(var(--c-bg) / <alpha-value>)',
+        panel: 'rgb(var(--c-panel) / <alpha-value>)',
+        elevated: 'rgb(var(--c-elevated) / <alpha-value>)',
+        neon: 'rgb(var(--c-accent) / <alpha-value>)',
+        warm: 'rgb(var(--c-text) / <alpha-value>)',
+        muted: 'rgb(var(--c-muted) / <alpha-value>)',
       },
       fontFamily: {
         sans: ['Space Grotesk', 'Inter', 'system-ui', 'sans-serif'],
@@ -20,8 +20,8 @@ export default {
         widest2: '0.28em',
       },
       boxShadow: {
-        neon: '0 0 24px rgba(0, 240, 255, 0.22)',
-        'neon-lg': '0 0 60px rgba(0, 240, 255, 0.18)',
+        neon: '0 0 24px rgb(var(--c-accent) / 0.22)',
+        'neon-lg': '0 0 60px rgb(var(--c-accent) / 0.18)',
       },
       transitionTimingFunction: {
         smooth: 'cubic-bezier(0.16, 1, 0.3, 1)',

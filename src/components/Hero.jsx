@@ -99,7 +99,7 @@ export default function Hero() {
             className="mt-12 flex flex-wrap gap-x-10 gap-y-5 border-t border-white/10 pt-6"
           >
             {[
-              ['05', 'Shipped systems'],
+              ['04', 'Shipped systems'],
               ['06', 'Core tools'],
               ['∞', 'Iterations'],
             ].map(([value, label]) => (

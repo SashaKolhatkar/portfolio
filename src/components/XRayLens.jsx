@@ -12,17 +12,17 @@ const LAYER_GRID =
 
 function EditorialCell({ number, title, body, children }) {
   return (
-    <div className="relative flex flex-col overflow-hidden bg-[#E9E5DA] p-7 text-obsidian sm:p-9">
+    <div className="relative flex flex-col overflow-hidden bg-[rgb(var(--c-editorial))] p-7 text-[#0D0E12] sm:p-9">
       <div className="flex items-center justify-between">
-        <span className="font-mono text-[9px] uppercase tracking-[0.24em] text-obsidian/50">
+        <span className="font-mono text-[9px] uppercase tracking-[0.24em] text-[#0D0E12]/50">
           Surface / {number}
         </span>
-        <span className="font-mono text-[9px] text-obsidian/30">FIG. 0{number}</span>
+        <span className="font-mono text-[9px] text-[#0D0E12]/30">FIG. 0{number}</span>
       </div>
       <h3 className="mt-10 max-w-[16ch] font-editorial text-4xl leading-[1.02] sm:text-5xl">
         {title}
       </h3>
-      <p className="mt-5 max-w-[34ch] text-sm leading-relaxed text-obsidian/60">
+      <p className="mt-5 max-w-[34ch] text-sm leading-relaxed text-[#0D0E12]/60">
         {body}
       </p>
       <div className="mt-auto pt-8">{children}</div>
@@ -61,16 +61,16 @@ function StackArt() {
         ['PRIORITY / 03', '31%'],
       ].map(([label, value], i) => (
         <div key={label} className="flex items-center gap-3">
-          <span className="w-[76px] shrink-0 font-mono text-[8px] tracking-wider text-obsidian/45">
+          <span className="w-[76px] shrink-0 font-mono text-[8px] tracking-wider text-[#0D0E12]/45">
             {label}
           </span>
-          <div className="h-1.5 flex-1 bg-obsidian/10">
+          <div className="h-1.5 flex-1 bg-[#0D0E12]/10">
             <div
-              className="h-full bg-obsidian/60"
+              className="h-full bg-[#0D0E12]/60"
               style={{ width: value, transform: `translateX(${i * 6}px)` }}
             />
           </div>
-          <span className="font-mono text-[8px] text-obsidian/45">{value}</span>
+          <span className="font-mono text-[8px] text-[#0D0E12]/45">{value}</span>
         </div>
       ))}
     </div>
@@ -85,7 +85,7 @@ function WaveArt() {
         return (
           <span
             key={i}
-            className="flex-1 bg-obsidian/50"
+            className="flex-1 bg-[#0D0E12]/50"
             style={{ height: `${h}%`, opacity: 0.25 + (i % 5) * 0.12 }}
           />
         )
@@ -97,7 +97,7 @@ function WaveArt() {
 function EditorialLayer({ hidden }) {
   return (
     <div
-      className={`${LAYER_GRID} bg-[#B9B3A6] ${hidden ? 'invisible' : ''}`}
+      className={`${LAYER_GRID} bg-[rgb(var(--c-editorial-gap))] ${hidden ? 'invisible' : ''}`}
       aria-hidden={hidden}
     >
       <EditorialCell
@@ -304,7 +304,7 @@ function Telemetry({ fast }) {
         ].map(([k, v]) => (
           <div key={k} className="bg-[#061216] px-2 py-3">
             <div className="font-mono text-[8px] tracking-widest text-neon/40">{k}</div>
-            <div className="mt-1 font-mono text-sm text-warm">{v}</div>
+            <div className="mt-1 font-mono text-sm text-[#F3F0E7]">{v}</div>
           </div>
         ))}
       </div>
@@ -334,7 +334,7 @@ function Telemetry({ fast }) {
 
 function BlueprintCell({ number, title, children }) {
   return (
-    <div className="relative flex flex-col overflow-hidden bg-[#061216] p-7 text-warm sm:p-9">
+    <div className="relative flex flex-col overflow-hidden bg-[#061216] p-7 text-[#F3F0E7] sm:p-9">
       <div className="grid-fine pointer-events-none absolute inset-0 opacity-25" />
       <div className="scanlines pointer-events-none absolute inset-0 opacity-30" />
       <div className="relative flex items-center justify-between">

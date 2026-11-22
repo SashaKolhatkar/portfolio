@@ -17,28 +17,8 @@ export const NAV_LINKS = [
 /* Real repositories from github.com/SashaKolhatkar are linked here. */
 export const PROJECTS = [
   {
-    id: 'batterysense',
-    index: '01',
-    title: 'BatterySense AI',
-    subtitle: 'EV battery state-of-health estimation',
-    category: 'ML / CONCEPT STUDY',
-    visual: 'battery',
-    stack: ['XGBoost', 'Isolation Forest', 'FastAPI', 'React'],
-    summary:
-      'Estimates remaining battery health from charge-cycle telemetry and flags anomalous degradation patterns before they become failures.',
-    detail:
-      'A supervised XGBoost regressor predicts state-of-health from voltage, current, temperature and cycle features. An unsupervised Isolation Forest layers on top to surface early anomaly signals, served through a FastAPI inference endpoint and visualised in a live React dashboard. A concept study — repository and live demo are available on request.',
-    metrics: [
-      { key: 'MAE', value: '0.021' },
-      { key: 'R²', value: '0.94' },
-      { key: 'Lead time', value: '14 cycles' },
-    ],
-    demo: '#',
-    repo: '#',
-  },
-  {
     id: 'sentimentiq',
-    index: '02',
+    index: '01',
     title: 'SentimentIQ',
     subtitle: 'Social & customer-review intelligence',
     category: 'NLP / FULL-STACK',
@@ -58,7 +38,7 @@ export const PROJECTS = [
   },
   {
     id: 'memoza',
-    index: '03',
+    index: '02',
     title: 'Memoza',
     subtitle: 'Adaptive planning workspace',
     category: 'FULL-STACK / PRODUCT',
@@ -78,7 +58,7 @@ export const PROJECTS = [
   },
   {
     id: 'smart-crop',
-    index: '04',
+    index: '03',
     title: 'Smart Crop Recommendation',
     subtitle: 'Field Lab agritech console',
     category: 'ML / AGRITECH',
@@ -98,7 +78,7 @@ export const PROJECTS = [
   },
   {
     id: 'mood-music',
-    index: '05',
+    index: '04',
     title: 'Mood → Music',
     subtitle: 'Emotion-driven song recommendation',
     category: 'CV / RECOMMENDER',

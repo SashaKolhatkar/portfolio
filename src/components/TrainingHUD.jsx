@@ -76,8 +76,16 @@ export default function TrainingHUD() {
         <svg viewBox="0 0 300 64" className="h-16 w-full" preserveAspectRatio="none">
           <defs>
             <linearGradient id="hud-wave" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#00F0FF" stopOpacity="0.28" />
-              <stop offset="100%" stopColor="#00F0FF" stopOpacity="0" />
+              <stop
+                offset="0%"
+                style={{ stopColor: 'rgb(var(--c-accent))' }}
+                stopOpacity="0.28"
+              />
+              <stop
+                offset="100%"
+                style={{ stopColor: 'rgb(var(--c-accent))' }}
+                stopOpacity="0"
+              />
             </linearGradient>
           </defs>
           <path
@@ -88,7 +96,7 @@ export default function TrainingHUD() {
             key={tick}
             d={wavePath(tick, fast)}
             fill="none"
-            stroke="#00F0FF"
+            style={{ stroke: 'rgb(var(--c-accent))' }}
             strokeWidth="1.4"
             initial={fast ? false : { pathLength: 0, opacity: 0.2 }}
             animate={{ pathLength: 1, opacity: 1 }}
