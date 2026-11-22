@@ -10,6 +10,8 @@ const THEMES = [
   { id: 'eco', icon: 'leaf', label: 'Eco' },
 ]
 
+const RESUME_URL = `${import.meta.env.BASE_URL}SashaKolhatkar-Resume.pdf`
+
 export default function Nav() {
   const { fast, toggleFast, theme, setTheme } = useSettings()
   const { scrollYProgress } = useScroll()
@@ -130,7 +132,10 @@ export default function Nav() {
             <Icon name="github" size={16} />
           </a>
           <a
-            href="#contact"
+            href={RESUME_URL}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Open résumé PDF"
             className="hidden items-center gap-2 rounded-full border border-white/15 px-4 py-2 font-mono text-[10px] uppercase tracking-widest text-warm/80 transition-colors hover:border-neon/50 hover:text-neon sm:flex"
           >
             Résumé <Icon name="arrowUpRight" size={12} />
@@ -171,9 +176,18 @@ export default function Nav() {
               <a
                 href="#contact"
                 onClick={() => setMenuOpen(false)}
+                className="mt-3 flex items-center gap-2 font-mono text-xs tracking-widest text-muted hover:text-neon"
+              >
+                <BlinkDot /> Contact
+              </a>
+              <a
+                href={RESUME_URL}
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => setMenuOpen(false)}
                 className="mt-3 flex items-center gap-2 font-mono text-xs tracking-widest text-neon"
               >
-                <BlinkDot /> Résumé / Contact
+                <Icon name="arrowUpRight" size={14} /> Résumé / PDF
               </a>
             </nav>
           </motion.div>

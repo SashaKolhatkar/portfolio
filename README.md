@@ -29,7 +29,7 @@ npm run preview
 - Content lives in `src/data.js` (projects, timeline, nav links, tech stack).
 - Real repositories are wired up in `src/data.js`: SentimentIQ, Memoza, Smart Crop Recommendation and Mood → Music, with live demos where available.
 - Theme modes (Dark / Light / Eco) live in `src/context.jsx` and `src/index.css`; Fast Mode remains independent of the theme.
-- Résumé currently links to the contact section in `src/components/Nav.jsx`; swap it for a PDF URL when available.
+- Résumé is hosted at `public/SashaKolhatkar-Resume.pdf` and linked from both nav bars in `src/components/Nav.jsx` using `import.meta.env.BASE_URL`, so it resolves correctly on GitHub Pages. Replace the file to update your CV.
 - Update the contact email in `src/components/Footer.jsx`.
 - Colours and fonts are configured in `tailwind.config.js` and `src/index.css`.
 
