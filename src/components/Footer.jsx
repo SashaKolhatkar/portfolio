@@ -27,6 +27,9 @@ export default function Footer() {
               className="btn-primary"
             >
               <Icon name="mail" size={15} /> Start a conversation
+              <span className="hidden border-l border-obsidian/30 pl-3 font-mono text-[10px] font-normal normal-case tracking-normal opacity-70 sm:inline">
+                sashakolhatkar28@gmail.com
+              </span>
             </a>
             <a
               href="https://github.com/SashaKolhatkar"
